@@ -5,16 +5,19 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
+                sh 'g++ -o executable_file your_cpp_file.cpp'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing...'
+                sh './executable_file'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
+                // Add commands to deploy your project
             }
         }
     }
@@ -25,4 +28,3 @@ pipeline {
         }
     }
 }
-
